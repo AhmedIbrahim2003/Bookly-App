@@ -7,13 +7,19 @@ environment:
   sdk: '>=3.0.5 <4.0.0'
 
 dependencies:
+  fancy_text_reveal: ^1.0.1
   flutter:
     sdk: flutter
+  get: ^4.6.5
+  hexcolor: ^3.0.1
+  sizer: ^2.0.15
 
 dev_dependencies:
+  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/Logo.png
