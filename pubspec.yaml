@@ -1,16 +1,18 @@
 name: bookly_app
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
   fancy_text_reveal: ^1.0.1
   flutter:
     sdk: flutter
+  font_awesome_flutter: ^10.5.0
   get: ^4.6.5
+  google_fonts: ^5.1.0
   hexcolor: ^3.0.1
   sizer: ^2.0.15
 
@@ -24,3 +26,8 @@ flutter:
   assets:
     - assets/images/Logo.png
     - assets/images/Book1.png
+  fonts:
+    - family: GTSectraFine
+      fonts:
+        - asset: assets/fonts/GTSectraFine-Regular.ttf
+          weight: 400
