@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import 'book_details_custom_appbar.dart';
+import 'book_details_appbar.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -12,7 +12,9 @@ class BookDetailsViewBody extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 3.w),
         child: const Column(
-          children: [BookDetailsCustomAppBar()],
+          children: [
+            BookDetailsCustomAppBar(),
+          ],
         ),
       ),
     );
