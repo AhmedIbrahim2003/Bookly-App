@@ -1,9 +1,9 @@
 import 'package:bookly_app/core/utlis/assets.dart';
 import 'package:fancy_text_reveal/fancy_text_reveal.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../../constants.dart';
 import '../../../../home/presentation/view/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -20,10 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        Get.to(
-          () => const HomeView(),
-          transition: Transition.circularReveal,
-        );
+        myPushReplacmentNavigator(context: context, destination: const HomeView());
       },
     );
   }
