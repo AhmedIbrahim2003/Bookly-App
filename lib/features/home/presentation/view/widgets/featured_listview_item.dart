@@ -1,12 +1,13 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/rendering.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utlis/assets.dart';
 import '../book_details_view.dart';
 
-class FeaturedListViewItem extends StatelessWidget {
-  const FeaturedListViewItem({super.key});
+class CustomBookImageBox extends StatelessWidget {
+  const CustomBookImageBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +20,14 @@ class FeaturedListViewItem extends StatelessWidget {
       },
       child: Container(
         height: 35.h,
-        width: 50.w,
+        width: RenderErrorBox.minimumWidth,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           image: const DecorationImage(
             image: AssetImage(
               AssetsData.bookCover,
             ),
-            fit: BoxFit.fill
+            fit: BoxFit.fitHeight
           ),
         ),
       ),

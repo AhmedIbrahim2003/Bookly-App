@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import 'book_details_appbar.dart';
+import 'featured_listview_item.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -14,6 +15,7 @@ class BookDetailsViewBody extends StatelessWidget {
         child: const Column(
           children: [
             BookDetailsCustomAppBar(),
+            CustomBookImageBox(),
           ],
         ),
       ),
