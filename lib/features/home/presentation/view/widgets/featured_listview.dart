@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:sizer/sizer.dart';
 
-import 'featured_listview_item.dart';
+import 'custom_book_image_box.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});

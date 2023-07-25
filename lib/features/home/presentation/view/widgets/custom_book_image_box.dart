@@ -27,7 +27,7 @@ class CustomBookImageBox extends StatelessWidget {
             image: AssetImage(
               AssetsData.bookCover,
             ),
-            fit: BoxFit.fitHeight
+            fit: BoxFit.fill
           ),
         ),
       ),
