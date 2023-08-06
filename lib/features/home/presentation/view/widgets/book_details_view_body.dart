@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import 'book_details_appbar.dart';
+import 'book_price_widget.dart';
 import 'custom_book_image_box.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -44,6 +45,10 @@ class BookDetailsViewBody extends StatelessWidget {
               width: 27.w,
               child: const ItemRate(),
             ),
+            SizedBox(
+              height: 5.h,
+            ),
+            const BookPrice()
           ],
         ),
       ),
