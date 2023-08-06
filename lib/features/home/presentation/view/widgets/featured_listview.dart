@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/rendering.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../../../constants.dart';
+import '../book_details_view.dart';
 import 'custom_book_image_box.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -16,7 +19,16 @@ class FeaturedBooksListView extends StatelessWidget {
         itemBuilder: (context, index) {
           return Padding(
             padding: EdgeInsets.symmetric(horizontal: 7.sp),
-            child: const CustomBookImageBox(),
+            child: CustomBookImageBox(
+              imageHeight: 35.h,
+              imageWidth: RenderErrorBox.minimumWidth,
+              onTap: () {
+                myPushNavigator(
+                  context: context,
+                  destination: const BookDetailsView(),
+                );
+              },
+            ),
           );
         },
       ),

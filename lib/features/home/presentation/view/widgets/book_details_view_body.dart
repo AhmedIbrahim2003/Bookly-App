@@ -1,5 +1,6 @@
 import 'package:bookly_app/features/home/presentation/view/widgets/item_rate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:sizer/sizer.dart';
 
 import 'book_details_appbar.dart';
@@ -17,18 +18,22 @@ class BookDetailsViewBody extends StatelessWidget {
         child: Column(
           children: [
             const BookDetailsCustomAppBar(),
-            const Padding(
-              padding: EdgeInsets.only(top: 30),
-              child: CustomBookImageBox(),
+            Padding(
+              padding: const EdgeInsets.only(top: 30),
+              child: CustomBookImageBox(
+                imageHeight: 30.h,
+                imageWidth: 42.w,
+                onTap: () {},
+              ),
             ),
-            const SizedBox(
-              height: 45,
+            SizedBox(
+              height: 4.h,
             ),
             Text(
               'The Jungle Book',
               style: TextStyle(
                 fontFamily: 'GTSectraFine',
-                fontSize: 27.sp,
+                fontSize: 23.sp,
               ),
             ),
             Text(
@@ -48,7 +53,8 @@ class BookDetailsViewBody extends StatelessWidget {
             SizedBox(
               height: 5.h,
             ),
-            const BookPrice()
+            const BookPrice(),
+            
           ],
         ),
       ),
