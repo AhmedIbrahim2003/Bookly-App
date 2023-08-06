@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.0.5 <4.0.0"
 
 dependencies:
+  equatable: ^2.0.5
   fancy_text_reveal: ^1.0.1
   flutter:
     sdk: flutter

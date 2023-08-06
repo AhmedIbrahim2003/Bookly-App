@@ -1,11 +1,8 @@
-import 'package:bookly_app/features/home/presentation/view/widgets/featured_listview.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/item_rate.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/similar_books_listview.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../../../constants.dart';
-import '../book_details_view.dart';
 import 'book_details_appbar.dart';
 import 'book_price_widget.dart';
 import 'custom_book_image_box.dart';

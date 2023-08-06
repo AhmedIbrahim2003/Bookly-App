@@ -13,7 +13,8 @@ void myPushReplacmentNavigator(
   );
 }
 
-void myPushNavigator({required BuildContext context, required Widget destination}) {
+void myPushNavigator(
+    {required BuildContext context, required Widget destination}) {
   Navigator.push(
     context,
     CupertinoPageRoute(

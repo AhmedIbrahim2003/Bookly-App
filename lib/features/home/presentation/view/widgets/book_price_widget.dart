@@ -28,10 +28,9 @@ class BookPrice extends StatelessWidget {
               child: Text(
                 '19.99 €',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                  fontSize: 15.sp
-                ),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                    fontSize: 15.sp),
               ),
             ),
           ),
@@ -54,10 +53,9 @@ class BookPrice extends StatelessWidget {
               child: Text(
                 'Free Preview',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 13.sp
-                ),
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 13.sp),
               ),
             ),
           ),

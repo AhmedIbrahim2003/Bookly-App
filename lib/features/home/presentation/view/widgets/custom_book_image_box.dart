@@ -3,7 +3,11 @@ import 'package:flutter/cupertino.dart';
 import '../../../../../core/utlis/assets.dart';
 
 class CustomBookImageBox extends StatelessWidget {
-  const CustomBookImageBox({super.key, required this.imageHeight, required this.imageWidth, required this.onTap});
+  const CustomBookImageBox(
+      {super.key,
+      required this.imageHeight,
+      required this.imageWidth,
+      required this.onTap});
 
   final double imageHeight;
   final double imageWidth;
@@ -19,11 +23,10 @@ class CustomBookImageBox extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
           image: const DecorationImage(
-            image: AssetImage(
-              AssetsData.bookCover,
-            ),
-            fit: BoxFit.fill
-          ),
+              image: AssetImage(
+                AssetsData.bookCover,
+              ),
+              fit: BoxFit.fill),
         ),
       ),
     );

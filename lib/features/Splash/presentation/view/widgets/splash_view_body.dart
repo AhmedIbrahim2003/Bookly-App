@@ -20,7 +20,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     Future.delayed(
       const Duration(seconds: 3),
       () {
-        myPushReplacmentNavigator(context: context, destination: const HomeView());
+        myPushReplacmentNavigator(
+            context: context, destination: const HomeView());
       },
     );
   }
