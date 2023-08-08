@@ -1,3 +1,10 @@
-abstract class Failuer{}
+abstract class Failuer{
+  final String errorMessage;
 
-class ServerFaliuer extends Failuer{}
+  Failuer(this.errorMessage);
+}
+
+class ServerFaliuer extends Failuer{
+  ServerFaliuer(super.errorMessage);
+  
+}

@@ -24,7 +24,7 @@ class HomeRepoImpl implements HomeRepo {
     } catch (e) {
       // ignore: avoid_print
       print('$e');
-      return left(ServerFaliuer());
+      return left(ServerFaliuer(e.toString()));
     }
   }
 
@@ -42,7 +42,7 @@ class HomeRepoImpl implements HomeRepo {
     } catch (e) {
       // ignore: avoid_print
       print('$e');
-      return left(ServerFaliuer());
+      return left(ServerFaliuer(e.toString()));
     }
   }
 }
