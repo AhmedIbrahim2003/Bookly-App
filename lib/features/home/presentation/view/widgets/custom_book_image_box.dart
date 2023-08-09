@@ -1,14 +1,20 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:sizer/sizer.dart';
 
-import '../../../../../core/utlis/assets.dart';
+import 'loading_placeholder.dart';
 
 class CustomBookImageBox extends StatelessWidget {
-  const CustomBookImageBox(
-      {super.key,
-      required this.imageHeight,
-      required this.imageWidth,
-      required this.onTap});
+  const CustomBookImageBox({
+    super.key,
+    required this.imageHeight,
+    required this.imageWidth,
+    required this.onTap,
+    required this.imageUrl,
+  });
 
+  final String imageUrl;
   final double imageHeight;
   final double imageWidth;
   final Null Function() onTap;
@@ -17,17 +23,24 @@ class CustomBookImageBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
+      child: CachedNetworkImage(
         height: imageHeight,
         width: imageWidth,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
-          image: const DecorationImage(
-              image: AssetImage(
-                AssetsData.bookCover,
-              ),
-              fit: BoxFit.fill),
+        imageUrl: imageUrl,
+        imageBuilder: (context, imageProvider) => Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(4),
+            image: DecorationImage(
+              image: imageProvider,
+              fit: BoxFit.fill,
+            ),
+          ),
         ),
+        placeholder: (context, url) => MyLoadingPlaceholder(
+          height: 35.h,
+          width: RenderErrorBox.minimumWidth,
+        ),
+        errorWidget: (context, url, error) => const Icon(Icons.error),
       ),
     );
   }

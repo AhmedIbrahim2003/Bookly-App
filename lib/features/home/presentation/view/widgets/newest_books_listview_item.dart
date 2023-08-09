@@ -1,13 +1,19 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:bookly_app/features/home/data/models/book_model/volume_info.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../../constants.dart';
-import '../../../../../core/utlis/assets.dart';
 import '../book_details_view.dart';
 import 'item_rate.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class NewestBooksListViewItem extends StatelessWidget {
+  const NewestBooksListViewItem({
+    Key? key,
+    required this.bookInfo,
+  }) : super(key: key);
+
+  final VolumeInfo bookInfo;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +21,9 @@ class BestSellerListViewItem extends StatelessWidget {
       onTap: () {
         myPushNavigator(
           context: context,
-          destination: const BookDetailsView(),
+          destination:  BookDetailsView(
+            bookInfo: bookInfo,
+          ),
         );
       },
       child: SizedBox(
@@ -29,10 +37,8 @@ class BestSellerListViewItem extends StatelessWidget {
               width: 90,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
-                image: const DecorationImage(
-                  image: AssetImage(
-                    AssetsData.bookCover,
-                  ),
+                image: DecorationImage(
+                  image: NetworkImage(bookInfo.imageLinks!.thumbnail!),
                   fit: BoxFit.fitHeight,
                 ),
               ),
@@ -48,7 +54,7 @@ class BestSellerListViewItem extends StatelessWidget {
                   SizedBox(
                     width: 50.w,
                     child: Text(
-                      'The Jungle Book',
+                      bookInfo.title!,
                       style: TextStyle(
                         fontFamily: 'GTSectraFine',
                         fontSize: 18.sp,
@@ -58,10 +64,10 @@ class BestSellerListViewItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(
-                    width: 3,
+                    height: 3,
                   ),
                   Text(
-                    'Rudyard Kipling',
+                    bookInfo.authors![0],
                     style: TextStyle(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w500,
@@ -74,14 +80,17 @@ class BestSellerListViewItem extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '19.99 €',
+                        'Free',
                         style: TextStyle(
                           fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Spacer(),
-                      const ItemRate()
+                      ItemRate(
+                        rate: bookInfo.averageRating ?? 0,
+                        numberOfRates: bookInfo.ratingsCount ?? 0,
+                      )
                     ],
                   )
                 ],

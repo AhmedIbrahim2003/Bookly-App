@@ -6,7 +6,10 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:sizer/sizer.dart';
 
 class ItemRate extends StatelessWidget {
-  const ItemRate({super.key});
+  const ItemRate({super.key, required this.rate, required this.numberOfRates});
+
+  final double rate;
+  final int numberOfRates;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,7 @@ class ItemRate extends StatelessWidget {
           width: 6.3,
         ),
         Text(
-          '4.5',
+          '$rate',
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 14.sp,
@@ -32,7 +35,7 @@ class ItemRate extends StatelessWidget {
           width: 9,
         ),
         Text(
-          '(2390)',
+          '($numberOfRates)',
           style: TextStyle(
             fontSize: 11.sp,
             color: Colors.grey,

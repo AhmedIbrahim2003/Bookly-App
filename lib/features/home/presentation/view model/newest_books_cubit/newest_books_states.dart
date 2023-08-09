@@ -6,16 +6,16 @@ abstract class NewestBooksStates {}
 class NewestBooksInitState extends NewestBooksStates {}
 
 //get data states
-class NewestBooksGetLoadingState extends NewestBooksStates {}
+class GetNewestBooksLoadingState extends NewestBooksStates {}
 
-class NewestBooksGetSuccessState extends NewestBooksStates {
+class GetNewestBooksSuccessState extends NewestBooksStates {
   final List<BookModel> books;
 
-  NewestBooksGetSuccessState(this.books);
+  GetNewestBooksSuccessState(this.books);
 }
 
-class NewestBooksGetErrorState extends NewestBooksStates {
+class GetNewestBooksErrorState extends NewestBooksStates {
   final String errorMessage;
 
-  NewestBooksGetErrorState(this.errorMessage);
+  GetNewestBooksErrorState(this.errorMessage);
 }

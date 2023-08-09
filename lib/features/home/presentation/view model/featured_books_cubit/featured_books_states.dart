@@ -4,14 +4,14 @@ abstract class FeaturedBooksStates{}
 // initial state
 class FeaturedBooksInitState extends FeaturedBooksStates{}
 //get data states
-class FeaturedBooksGetLoadingState extends FeaturedBooksStates{}
-class FeaturedBooksGetSuccessState extends FeaturedBooksStates{
+class GetFeaturedBooksLoadingState extends FeaturedBooksStates{}
+class GetFeaturedBooksSuccessState extends FeaturedBooksStates{
   final List<BookModel> books;
 
-  FeaturedBooksGetSuccessState(this.books);
+  GetFeaturedBooksSuccessState(this.books);
 }
-class FeaturedBooksGetErrorState extends FeaturedBooksStates{
+class GetFeaturedBooksErrorState extends FeaturedBooksStates{
   final String errorMessage;
 
-  FeaturedBooksGetErrorState(this.errorMessage);
+  GetFeaturedBooksErrorState(this.errorMessage);
 }

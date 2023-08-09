@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 import 'package:sizer/sizer.dart';
 
-import 'best_seller_list_view.dart';
+import 'newest_books_listview.dart';
 import 'custom_appbar.dart';
 import 'featured_listview.dart';
 
@@ -42,7 +42,7 @@ class HomeViewModel extends StatelessWidget {
               ),
             ),
             const SliverToBoxAdapter(
-              child: BestSellerListView(),
+              child: NewestBooksListView(),
             )
           ],
         ),

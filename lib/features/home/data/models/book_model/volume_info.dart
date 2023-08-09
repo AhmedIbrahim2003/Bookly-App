@@ -5,12 +5,14 @@ import 'reading_modes.dart';
 
 class VolumeInfo extends Equatable {
   final String? title;
+  final List<dynamic>? authors;
+  final String? publisher;
   final String? publishedDate;
   final String? description;
   final ReadingModes? readingModes;
   final int? pageCount;
   final String? printType;
-  final int? averageRating;
+  final double? averageRating;
   final int? ratingsCount;
   final String? maturityRating;
   final bool? allowAnonLogging;
@@ -23,6 +25,8 @@ class VolumeInfo extends Equatable {
 
   const VolumeInfo({
     this.title,
+    this.authors,
+    this.publisher,
     this.publishedDate,
     this.description,
     this.readingModes,
@@ -42,6 +46,8 @@ class VolumeInfo extends Equatable {
 
   factory VolumeInfo.fromJson(Map<String, dynamic> json) => VolumeInfo(
         title: json['title'] as String?,
+        authors: json['authors'] as List<dynamic>?,
+        publisher: json['publisher'] as String?,
         publishedDate: json['publishedDate'] as String?,
         description: json['description'] as String?,
         readingModes: json['readingModes'] == null
@@ -50,7 +56,7 @@ class VolumeInfo extends Equatable {
                 json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
         printType: json['printType'] as String?,
-        averageRating: json['averageRating'] as int?,
+        averageRating: json['averageRating'] as double?,
         ratingsCount: json['ratingsCount'] as int?,
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,

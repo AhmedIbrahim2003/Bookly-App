@@ -26,7 +26,7 @@ class BookPrice extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                '19.99 €',
+                'Free',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,

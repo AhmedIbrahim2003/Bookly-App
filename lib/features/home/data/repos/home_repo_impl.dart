@@ -35,7 +35,10 @@ class HomeRepoImpl implements HomeRepo {
 
       List<BookModel> books = [];
       for (var item in data['items']) {
-        books.add(BookModel.fromJson(item));
+        if (item['saleInfo']['saleability'] == 'NOT_FOR_SALE' &&
+            item['saleInfo']['isEbook'] == false) {
+          books.add(BookModel.fromJson(item));
+        }
       }
       return right(books);
     } catch (e) {

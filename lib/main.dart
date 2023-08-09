@@ -5,12 +5,14 @@ import 'package:bookly_app/features/home/presentation/view%20model/newest_books_
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'bloc_observer.dart';
 import 'constants.dart';
 import 'features/Splash/presentation/view/splash_view.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
   setupServiceLocator();
+  Bloc.observer = const AppBlocObserver();
   runApp(const MainApp());
 }
 
@@ -22,10 +24,10 @@ class MainApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) => FeaturedBooksCubit(getIt.get<HomeRepoImpl>())..fetchFeaturedBooks(),
         ),
         BlocProvider(
-          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>()),
+          create: (context) => NewestBooksCubit(getIt.get<HomeRepoImpl>())..fetchNewestBooks() ,
         ),
       ],
       child: Sizer(builder: (context, orientation, deviceType) {
